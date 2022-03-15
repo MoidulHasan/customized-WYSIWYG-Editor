@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/web.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./ckeditor_4.11.4_standard/ckeditor/ckeditor.js"></script>
+    <title>Helpdesk</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header-container">
+            <div class="header-nav-container">
+                <div class="header-nav-sec-left">
+                    <div class="header-nav-sec-left-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" class="app-icon app-icon--dark cursor-pointer" data-identifyElement="56">
+                            <path
+                                d="M70.4 87.9H30.3c-4 0-7.3 3.3-7.3 7.3s3.3 7.3 7.3 7.3h40.1c4 0 7.3-3.3 7.3-7.3-.1-4-3.3-7.3-7.3-7.3zm27.8-30.8h-68c-4 0-7.3 3.3-7.3 7.3s3.3 7.3 7.3 7.3h68c4 0 7.3-3.3 7.3-7.3s-3.3-7.3-7.3-7.3zM30.3 40.6h68c4 0 7.3-3.3 7.3-7.3s-3.3-7.3-7.3-7.3h-68c-4 0-7.3 3.3-7.3 7.3 0 4.1 3.3 7.3 7.3 7.3z"
+                                data-identifyElement="57"></path>
+                        </svg>
+                    </div>
+                    <div class="header-nav-sec-left-text">
+                        Omnichannel Dashboard
+                    </div>
+                </div>
+                <div class="header-sidebar-container" id="show-sidebar">
+                    <div class="header-sidebar-container-wrap">
+                        <ul>
+                            <li class="my-dashboard">
+                                <a href="#">
+                                    My Dashboard
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128"
+                                        viewBox="0 0 128 128" class="app-icon app-icon--small selectedtick">
+                                        <path
+                                            d="M110.6 27.5c-3.2-2.4-7.8-1.7-10.6 1.2L52.2 78.2c-1.7 1.8-4.6 1.8-6.3 0L28 59.7c-2.8-2.9-7.4-3.6-10.6-1.2-4.1 3.1-4.5 9.1-1 12.6l29.5 30.5c1.8 1.8 4.6 1.8 6.4 0L111.8 40c3.3-3.5 3-9.5-1.2-12.5z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="my-dashboard">
+                                <a href="#" class="my-dashboard-text">
+                                    Knowledge Base Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="mb--110">
+                            <li class="team-dashboard">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" class="app-icon app-icon--verysmall" data-identifyElement="31">
+                                        <path fill-rule="evenodd"
+                                            d="M11.973 8.095h7.095a1 1 0 011 1v1.81a1 1 0 01-1 1h-7.095V19a1 1 0 01-1 1h-1.81a1 1 0 01-1-1v-7.095H1.068a1 1 0 01-1-1v-1.81a1 1 0 011-1h7.095V1a1 1 0 011-1h1.81a1 1 0 011 1v7.095z"
+                                            data-identifyElement="32"></path>
+                                    </svg> New team dashboard
+                                </a>
+                                <span>15 more to go before you use them all</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-nav-sec-right">
+                    <div class="header-nav-sec-right-items">
+                        <button class="get-started-btn">
+                            Get started (18%)
+                            <div class="header-btn-tooltip">
+                                Learn how to get most value out of Freshdesk Omnichanel of your bussiness
+                            </div>
+                        </button>
+                        <div class="new-btn-dropdown">
+                            <div class="dropdown">
+                                <button class="get-started-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        class="app-icon app-icon--verysmall mr-10" data-identifyElement="63">
+                                        <path
+                                            d="M16.945 14.522h4.789a1.21 1.21 0 110 2.422h-4.789v4.789a1.21 1.21 0 11-2.422 0v-4.789H9.734a1.21 1.21 0 110-2.422h4.789V9.733a1.21 1.21 0 112.422 0v4.789zM4.427 1.6H27.04a2.827 2.827 0 012.827 2.827V27.04a2.827 2.827 0 01-2.827 2.827H4.427A2.827 2.827 0 011.6 27.04V4.427A2.827 2.827 0 014.427 1.6zm0 2.423a.404.404 0 00-.404.404V27.04c0 .223.181.404.404.404H27.04a.404.404 0 00.404-.404V4.427a.404.404 0 00-.404-.404H4.427z"
+                                            data-identifyElement="64"></path>
+                                    </svg>
+                                    New
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="new-ticket.php">New ticket</a>
+                                    <a class="dropdown-item" href="#">New email</a>
+                                    <a class="dropdown-item" href="<? echo SERVER_URL." / ".Route::searchRoute(" Add User Web View ") ?>">New contact</a>
+                                    <a class="dropdown-item" href="<? echo SERVER_URL." / ".Route::searchRoute(" Add Companies Web View ") ?>">New company</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="serach-bar-container">
+                            <div class="search-bar-border"></div>
+                            <div class="search-bar-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="app-icon--link app-icon--topalign app-icon--smallsecondary mr-8" data-identifyElement="71">
+                                    <path fill="#183247"
+                                        d="M11.015 11.95c-2.641 2.17-6.557 2.013-9.033-.464-2.635-2.635-2.644-6.898-.019-9.523s6.888-2.616 9.523.019c2.477 2.476 2.633 6.392.464 9.033l3.855 3.855c.26.26.26.679.002.937a.662.662 0 01-.937-.002l-3.855-3.855zM2.902 2.902C.793 5.01.8 8.435 2.917 10.552c2.116 2.116 5.541 2.123 7.65.015 2.108-2.109 2.101-5.534-.015-7.65C8.435.8 5.01.793 2.902 2.902z"
+                                        data-identifyElement="72"></path>
+                                </svg> search
+                            </div>
+                        </div>
+                        <div class="bell-icon-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19" data-test-icon="notification" class="app-icon--link app-icon--topalign app-icon--large" data-identifyElement="78">
+                                <path fill="#183247"
+                                    d="M4.559 15.903H.727A.74.74 0 010 15.15a.74.74 0 01.727-.754h.647v-6.36c0-3.393 2.376-6.21 5.499-6.765a1.23 1.23 0 01-.004-.1C6.869.526 7.375 0 8 0s1.131.525 1.131 1.172c0 .033-.001.066-.004.099 3.123.554 5.5 3.372 5.5 6.764v6.361h.646a.74.74 0 01.727.754.74.74 0 01-.727.753H11.44C11.205 17.653 9.755 19 8 19s-3.205-1.347-3.441-3.097zm1.48 0c.217.913 1.012 1.59 1.961 1.59.949 0 1.744-.677 1.962-1.59H6.038zm7.133-1.507v-6.36c0-2.96-2.316-5.358-5.172-5.358S2.828 5.077 2.828 8.035v6.361h10.344z"
+                                    data-identifyElement="79"></path>
+                            </svg>
+                        </div>
+                        <div class="box-icon-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2" class="app-icon--link app-icon--topalign app-icon--large" data-identifyElement="82">
+                                <path fill="#475867"
+                                    d="M1.64.14a.3.3 0 010 .26h.06a.3.3 0 01.3.28.32.32 0 01-.16.32v.72a.32.32 0 01-.08.2.28.28 0 01-.2.08H.44a.28.28 0 01-.2-.08.32.32 0 01-.08-.2V1A.33.33 0 010 .75V.7A.3.3 0 01.28.4h.11a.27.27 0 010-.26A.27.27 0 01.75 0 1 1 0 011 .4a1.11 1.11 0 01.27-.4.28.28 0 01.37.11zM.72 1h-.4v.69a.12.12 0 00.11.12h.29V1zm.56 0v.81h.28a.12.12 0 00.12-.12V1zM1.12.56H.88v1.28h.24V.56zm.16 0v.31h.42a.14.14 0 00.14-.12V.7a.13.13 0 00-.12-.14h-.44zm-.56 0H.3a.14.14 0 00-.14.12.14.14 0 00.12.19h.44V.56zm.64-.39a.39.39 0 00-.09.11l-.06.09h.13a.22.22 0 00.12 0 .11.11 0 000-.15.1.1 0 00-.14 0zm-.69 0a.1.1 0 00-.14 0 .11.11 0 000 .15.2.2 0 00.11 0h.18L.76.28A.39.39 0 00.67.17z"
+                                    data-identifyElement="83"></path>
+                            </svg>
+                        </div>
+                        <div class="calendar-icon-btn">
+                            <img src="<?php echo ASSETS_FOLDER ?>/image/calendar.svg">
+                        </div>
+                        <div class="header-user-profile-dropdown">
+                            <div class="dropdown">
+                                <button class="profile-drop-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    W
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <ul>
+                                        <li class="user-details">
+                                            <h6>Waleed Hassan</h6>
+                                            <p>wh03027687675@gmail.com</p>
+                                        </li>
+                                        <li>
+                                            <h6>Keyboard shortcuts</h6>
+                                            <p>press <strong>?</strong> to view <a href="#">shortcuts</a></p>
+                                        </li>
+                                    </ul>
+                                    <a class="dropdown-item" href="#">Profile settings</a>
+                                    <a class="dropdown-item" href="#">go to customer portal</a>
+                                    <a class="dropdown-item" href="#">Sign out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-header-container">
+                <div class="sub-header-actions">
+                    <div class="sub-header-left">
+                        <div class="date-indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" class="app-icon app-icon--regular app-icon--muted-grey mr-6">
+                                <path
+                                    d="M35 11.543H24.5V7H35v4.543zm10.5 0V7h3.2a5.3 5.3 0 015.3 5.3v38.4a5.3 5.3 0 01-5.3 5.3H10.3A5.3 5.3 0 015 50.7V12.3A5.3 5.3 0 0110.3 7H14v4.543h-3.7a.757.757 0 00-.757.757V23h39.914V12.3a.757.757 0 00-.757-.757h-3.2zM35.002 27.5h-11.5V37h11.5v-9.5zm4.5 0V37h9.955v-9.5h-9.955zm-4.5 23.957V41.5h-11.5v9.957h11.5zm4.5 0H48.7a.757.757 0 00.757-.757v-9.2h-9.955v9.957zM19.002 27.5H9.543V37h9.459v-9.5zm0 23.957V41.5H9.543v9.2c0 .418.339.757.757.757h8.702zM17 4.816a2.25 2.25 0 114.5 0v7.5a2.25 2.25 0 11-4.5 0v-7.5zm21 0a2.25 2.25 0 114.5 0v7.5a2.25 2.25 0 11-4.5 0v-7.5z">
+                                </path>
+                            </svg> Today
+                        </div>
+                        <div class="dashboard-filters">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="app-icon app-icon--regular app-icon--muted-grey filter-icon">
+                                <path
+                                    d="M15.12 15.231v11.436l3.069-1.733v-9.653l8.299-10.142a.532.532 0 00-.413-.871H6.525a.533.533 0 00-.398.888l8.994 10.076zm-2.432.928L3.519 5.887C2.12 4.32 3.233 1.836 5.333 1.836H27.2c2.052 0 3.181 2.384 1.882 3.972L20.62 16.15v8.785c0 .877-.472 1.686-1.236 2.118l-3.069 1.733c-1.621.916-3.628-.256-3.628-2.118V16.16z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ticker-group-drop-btn">
+                            <div class="dropdown">
+                                <button class="ticket-group-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Ticket groups:<span>All groups</span>
+                                    <i class="far fa-chevron-down"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <ul>
+                                        <li class="search-input">
+                                            <input type="text" placeholder="Search group">
+                                            <i class="far fa-search"></i>
+                                        </li>
+                                        <li class="search-text">
+                                            You can select upto 4 options at a time
+                                        </li>
+                                    </ul>
+                                    <ul class="checkbox-input-container">
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Accout managers</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Billing</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Escalations</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Product Management</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">QA</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Replacement</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Sales</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Shipping and delivery</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ticker-group-drop-btn">
+                            <div class="dropdown">
+                                <button class="ticket-group-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Phone queues:<span>All queues</span>
+                                    <i class="far fa-chevron-down"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <ul>
+                                        <li class="search-input">
+                                            <input type="text" placeholder="Search group">
+                                            <i class="far fa-search"></i>
+                                        </li>
+                                        <li class="search-text">
+                                            You can select upto 4 options at a time
+                                        </li>
+                                    </ul>
+                                    <ul class="checkbox-input-container">
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Global Queues</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="recent-activity-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                            class="nucleus-icon nucleus-icon--small nucleus-icon--primary" aria-hidden="true" role="img"
+                            data-identifyElement="175">
+                            <path
+                                d="M6.298 6.343l-2.919-.017c-.67-.004-1.216-.55-1.22-1.22s.536-1.21 1.206-1.206l6.004.035a1.23 1.23 0 011.22 1.22l.036 6.004c.004.67-.536 1.21-1.206 1.206s-1.216-.55-1.22-1.22L8.18 7.893a11.362 11.362 0 00-3.401 8.108c0 6.326 5.19 11.455 11.591 11.455 4.538 0 8.599-2.6 10.496-6.588.287-.603 1.013-.862 1.623-.578s.872 1.002.585 1.604c-2.296 4.826-7.212 7.974-12.705 7.974-7.749 0-14.032-6.208-14.032-13.867 0-3.679 1.462-7.114 3.961-9.657zm24.044 10.921c-.061.663-.654 1.152-1.325 1.092s-1.166-.646-1.105-1.31a11.38 11.38 0 00-.315-3.902c-.167-.645.226-1.302.879-1.468s1.318.223 1.485.868a13.72 13.72 0 01.381 4.718zm-2.263-8.906c.372.555.218 1.304-.344 1.671s-1.319.215-1.691-.34a11.564 11.564 0 00-2.367-2.581c-.523-.42-.602-1.18-.177-1.696s1.194-.595 1.716-.175a14.009 14.009 0 012.862 3.121zm-6.73-5.326c.63.236.947.933.708 1.555s-.944.936-1.574.699a11.673 11.673 0 00-4.114-.742c-.674 0-1.22-.54-1.22-1.206s.546-1.206 1.22-1.206c1.722 0 3.403.307 4.98.899zm-3.761 5.934v6.833h5.897c.674 0 1.22.54 1.22 1.206s-.546 1.206-1.22 1.206h-7.117c-.674 0-1.22-.54-1.22-1.206V8.966c0-.666.546-1.206 1.22-1.206s1.22.54 1.22 1.206z"
+                                data-identifyElement="176"></path>
+                        </svg>
+                        Recent activities
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content-container">
+            <div class="main-content-container-wrap">
+                <form method="post" enctype="multipart/form-data" action="http://localhost/supportImprovement/panel/tickets/create">
+                    <div class="add-user-page-header">
+                        <div class="add-user-header-text">
+                            Add Tickets
+                        </div>
+                        <div class="page-header-btn">
+                            <button class="add-product-btn">Save</button>
+                        </div>
+                    </div>
+                    <section class="add-user-content-sec-container">
+                        <div class="add-user-content-sec-wrap">
+                            <div class="add-user-content-text">
+                                <h2>Basic</h2>
+                            </div>
+                            <div class="add-user-content-card-container">
+                                <div class="input-email-container">
+                                    <div class="email-input-container">
+                                        <label for="company_id">Select User</label>
+                                        <select class="countrySelect" name="user_id">
+                                            <option value="">Select User</option>
+                                            <option value="8">Kermit Young</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-email-container">
+                                    <div class="email-input-container">
+                                        <label for="company_id">Select Company</label>
+                                        <select class="countrySelect" name="company_id">
+                                            <option value="">Select Company</option>
+                                            <option value="1">Juliet Schwartz</option>
+                                            <option value="6">Alea Rogers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-email-container">
+                                    <div class="email-input-container">
+                                        <label for="agent_id">Select Agent</label>
+                                        <select class="countrySelect" name="agent_id">
+                                            <option value="">Select Agent</option>
+                                            <option value="1">Ivor Koch</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-email-container">
+                                    <div class="email-input-container">
+                                        <label for="priority_id">Select Priority</label>
+                                        <select class="countrySelect" name="priority_id">
+                                            <option value="">Select Priority</option>
+                                            <option value="1">Low</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-email-container">
+                                    <div class="email-input-container">
+                                        <label for="status_id">Select Status</label>
+                                        <select class="countrySelect" name="status_id">
+                                            <option value="">Select Status</option>
+                                            <option value="2">Dale Ross</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-email-container">
+                                    <div class="email-input-container">
+                                        <label for="group_id">Select Group</label>
+                                        <select class="countrySelect" name="group_id">
+                                            <option value="">Select Group</option>
+                                            <option value="1">Delilah Macdonald</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-email-container">
+                                    <div class="email-input-container">
+                                        <label for="title">title</label>
+                                        <input type="text" placeholder="title" id="title" name="title">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+
+
+</body>

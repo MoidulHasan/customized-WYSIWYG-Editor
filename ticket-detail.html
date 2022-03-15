@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- New -->
+    <!-- <script src="./ckeditor/ckeditor.js"></script> -->
+
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            toolbar_location: 'bottom',
+            menubar: false,
+            plugins: "link image lists",
+            toolbar: 'bold italic underline | alignleft aligncenter alignright alignjustify | link image | undo redo | remove-formatting |  numlist bullist | forecolor backcolor removeformat ',
+        });
+    </script>
+
+    <title>Helpdesk</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <nav class="nav-bar-container">
+            <div class="nav-bar-header">
+                <a href="#">
+                    <img src="assets/img/navbar-header-icon.svg">
+                </a>
+            </div>
+            <div class="nav-bar-body">
+                <ul class="nav-list">
+                    <li class="navbar-items">
+                        <a href="index.html" class="active-nav">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    class="nav-icon" focusable="false">
+                                    <path
+                                        d="M15.733 30.933a15.117 15.117 0 01-10.287-4.01 15.27 15.27 0 01-3.121-4.025 15.148 15.148 0 01-1.483-4.103 15.33 15.33 0 01-.187-4.997 15.132 15.132 0 011.298-4.489A15.254 15.254 0 019.73 1.764a15.063 15.063 0 012.94-.922A15.336 15.336 0 0118.422.77c1.016.181 2.013.467 2.97.852a15.245 15.245 0 017.959 7.355 15.12 15.12 0 011.405 4.442c.248 1.624.233 3.29-.046 4.909a15.103 15.103 0 01-1.36 4.16 15.267 15.267 0 01-7.196 7.024 15.14 15.14 0 01-6.13 1.418l-.294.003zm0-2.026a13.128 13.128 0 008.974-3.53 13.265 13.265 0 002.686-3.506c.577-1.094.998-2.27 1.246-3.482.297-1.45.347-2.95.151-4.417a13.141 13.141 0 00-1.113-3.805 13.229 13.229 0 00-6.742-6.54 13.168 13.168 0 00-5.03-1.065 13.199 13.199 0 00-5.075.942 13.21 13.21 0 00-6.9 6.376 13.107 13.107 0 00-1.217 3.847 13.314 13.314 0 00.054 4.341 13.1 13.1 0 001.199 3.592c.655 1.298 1.526 2.485 2.566 3.501s2.249 1.86 3.564 2.483a13.117 13.117 0 005.639 1.264zm3.737-9.398a4.368 4.368 0 01.594 3.027 4.355 4.355 0 01-.375 1.182 4.388 4.388 0 01-3.845 2.484l-.113.001a4.363 4.363 0 01-1.807-.389 4.422 4.422 0 01-2.103-2.002 4.366 4.366 0 01-.446-2.557 4.364 4.364 0 011.289-2.585 4.387 4.387 0 015.362-.601c1.449-1.491 2.948-2.933 4.419-4.403a1.039 1.039 0 01.37-.235 1.02 1.02 0 01.999.176 1.02 1.02 0 01.327 1.038 1.022 1.022 0 01-.232.422c-1.447 1.512-2.954 2.967-4.439 4.442zm-3.739 4.668c.335-.002.667-.07.972-.208a2.385 2.385 0 001.332-1.621 2.379 2.379 0 00-.148-1.507 2.387 2.387 0 00-1.211-1.196 2.364 2.364 0 10-1.008 4.53l.061.001zm8.963-11.478l-.084-.004a1.017 1.017 0 01-.714-.392c-.051-.066-.089-.139-.129-.212l-.074-.134a9.281 9.281 0 00-.714-1.084 9.177 9.177 0 00-4.206-3.065 9.194 9.194 0 00-4.255-.44 9.08 9.08 0 00-4.9 2.271 9.234 9.234 0 00-1.96 2.518l-.043.072c-.043.061-.052.078-.102.133a1.036 1.036 0 01-.827.328 1.02 1.02 0 01-.903-.757 1.016 1.016 0 01.021-.578c.024-.071.034-.087.066-.154a11.643 11.643 0 01.784-1.267 11.2 11.2 0 015.269-4.007 11.21 11.21 0 015.284-.57 11.1 11.1 0 015.718 2.535 11.233 11.233 0 012.626 3.236l.042.079c.032.067.043.083.066.154a.978.978 0 01.038.496 1.021 1.021 0 01-.756.811c-.072.018-.091.018-.165.027l-.084.003z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <div class="navbar-tooltip">
+                                Dashboard
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar-items">
+                        <a href="ticket.html">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    class="nav-icon" focusable="false">
+                                    <path
+                                        d="M.267 12.874V10.23a3.824 3.824 0 013.818-3.831h23.831a3.825 3.825 0 013.818 3.831v2.644l-1.018.563c-1.076.595-1.736 1.665-1.736 2.83s.66 2.235 1.736 2.83l1.018.563v2.644a3.824 3.824 0 01-3.818 3.831H4.085a3.825 3.825 0 01-3.818-3.831V19.66l1.018-.563c1.076-.595 1.736-1.665 1.736-2.83s-.66-2.235-1.736-2.83l-1.018-.563zm4.72 3.393c0 1.948-1.107 3.648-2.753 4.558v1.478c0 1.026.829 1.857 1.851 1.857h23.831a1.855 1.855 0 001.851-1.857v-1.478c-1.646-.91-2.753-2.61-2.753-4.558s1.107-3.648 2.753-4.558v-1.478a1.854 1.854 0 00-1.851-1.857H4.085a1.855 1.855 0 00-1.851 1.857v1.478c1.646.91 2.753 2.61 2.753 4.558zm5.981-5.14h10.065a3.825 3.825 0 013.818 3.831v2.6a3.824 3.824 0 01-3.818 3.831H10.968a3.825 3.825 0 01-3.818-3.831v-2.6a3.824 3.824 0 013.818-3.831zm0 1.973a1.855 1.855 0 00-1.851 1.857v2.6c0 1.026.829 1.857 1.851 1.857h10.065a1.855 1.855 0 001.851-1.857v-2.6a1.854 1.854 0 00-1.851-1.857H10.968z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <div class="navbar-tooltip">
+                                Ticket
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar-items">
+                        <div class="dropdown">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 2" viewBox="0 0 20 20"
+                                    class="nav-icon" focusable="false" data-identifyElement="45">
+                                    <path
+                                        d="M10 3.92a3 3 0 103 3 3 3 0 00-3-3zm0 4.54a1.57 1.57 0 111.57-1.57A1.57 1.57 0 0110 8.46zM16.06 1H3.94A2.94 2.94 0 001 3.94v12.12A2.94 2.94 0 003.94 19h12.12A2.94 2.94 0 0019 16.06V3.94A2.94 2.94 0 0016.06 1zM5.78 17.6l.67-4A1.54 1.54 0 018 12.27h4a1.54 1.54 0 011.52 1.29l.67 4zm11.82-1.54a1.54 1.54 0 01-1.54 1.54h-.42l-.71-4.27A2.93 2.93 0 0012 10.87H8a2.93 2.93 0 00-2.9 2.46l-.74 4.27h-.42a1.54 1.54 0 01-1.54-1.54V3.94A1.54 1.54 0 013.94 2.4h12.12a1.54 1.54 0 011.54 1.54z"
+                                        data-identifyElement="46"></path>
+                                </svg>
+                            </span>
+                            <div class="dropdown-content">
+                                <a href="contacts.html">Contacts</a>
+                                <a href="companies.html">Companies</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="navbar-items">
+                        <a href="#">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 2" viewBox="0 0 20 20"
+                                    class="nav-icon" focusable="false" data-identifyElement="50">
+                                    <path
+                                        d="M17.88 16.73a.7.7 0 01-.7.7h-2.83a5.92 5.92 0 00-3.43 1.08l-.52.36a.68.68 0 01-.8 0l-.52-.36a5.94 5.94 0 00-3.43-1.08H2.82a.7.7 0 010-1.4h2.83a7.37 7.37 0 014.23 1.33l.12.09.11-.08A7.33 7.33 0 0114.35 16h2.83a.7.7 0 01.7.73zM19 1.7v12.14a.7.7 0 01-.7.7h-4.51a6.07 6.07 0 00-3.4 1h-.15a.6.6 0 01-.48 0h-.15a6.07 6.07 0 00-3.4-1H1.7a.7.7 0 01-.7-.7V1.7a.7.7 0 01.7-.7h4.51A7.5 7.5 0 0110 2a7.5 7.5 0 013.79-1h4.51a.7.7 0 01.7.7zM6.21 13.14a7.47 7.47 0 013.09.67V3.25a6.11 6.11 0 00-3.09-.85H2.4v10.74zM17.6 2.4h-3.81a6.11 6.11 0 00-3.09.85v10.56a7.47 7.47 0 013.09-.67h3.81z"
+                                        data-identifyElement="51"></path>
+                                </svg>
+                            </span>
+                            <div class="navbar-tooltip">
+                                Solutions
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar-items">
+                        <a href="#">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    class="nav-icon" focusable="false" data-identifyElement="54">
+                                    <path
+                                        d="M30.933 17.831v-1.734a4.123 4.123 0 00-3.15-3.989V5.364a1.474 1.474 0 10-2.438-1.118c.004.428.19.834.511 1.118v.742a5.435 5.435 0 00-1.387-.829l-7.524-2.881V2.03a.963.963 0 10-1.926 0v.366l-7.476 2.89a5.452 5.452 0 00-1.397.829v-.684a1.54 1.54 0 00.597-1.224 1.57 1.57 0 10-2.524 1.224v6.677a4.123 4.123 0 00-3.15 3.989v1.734a4.115 4.115 0 003.15 3.989v7.187H2.032a.963.963 0 100 1.926h27.94a.963.963 0 100-1.926h-2.235V21.82a4.116 4.116 0 003.199-3.989zm-1.927-1.735v1.734a2.197 2.197 0 01-1.224 1.927V14.14a2.186 2.186 0 011.224 1.956zm-21.87 1.792h17.679v2.765a.73.73 0 01-.732.732h-3.921a.723.723 0 01-.694-.511l-.096-.202a2.688 2.688 0 00-2.582-1.927h-1.657a2.697 2.697 0 00-2.582 1.927l-.067.202a.723.723 0 01-.694.511H7.869a.73.73 0 01-.732-.732v-2.765zM8.235 7.04l6.744-2.582v7.351a.963.963 0 101.926 0V4.458l6.744 2.572a3.334 3.334 0 012.1 3.112v5.781H6.143v-5.781A3.324 3.324 0 018.234 7.04zM2.994 17.831v-1.734a2.187 2.187 0 011.224-1.927v5.675a2.197 2.197 0 01-1.224-2.014zm3.15 11.175v-6.339a2.65 2.65 0 001.725.645h3.921a2.641 2.641 0 002.534-1.859l.067-.202a.77.77 0 01.742-.549h1.686a.77.77 0 01.742.549l.067.202a2.638 2.638 0 002.534 1.859h3.921a2.653 2.653 0 001.725-.645v6.339H6.144z"
+                                        data-identifyElement="55"></path>
+                                </svg>
+                            </span>
+                            <div class="navbar-tooltip">
+                                Chatbots
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar-items">
+                        <div class="dropdown">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" class="nav-icon"
+                                    focusable="false" data-identifyElement="60">
+                                    <path
+                                        d="M46.5 57.2h-32C8.7 57.2 4 52.4 4 46.6v-32C4 8.8 8.7 4 14.6 4h32c5.8 0 10.6 4.8 10.6 10.6v32c-.1 5.8-4.8 10.6-10.7 10.6zM14.6 8.5c-3.4 0-6.1 2.7-6.1 6.1v32c0 3.4 2.7 6.1 6.1 6.1h32c3.4 0 6.1-2.7 6.1-6.1v-32c0-3.4-2.7-6.1-6.1-6.1h-32z"
+                                        data-identifyElement="61"></path>
+                                    <path
+                                        d="M17.3 46.1c-1.3 0-2.3-1-2.3-2.3V17.7c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3v26.2c0 1.2-1.1 2.2-2.3 2.2zm12.7 0c-1.3 0-2.3-1-2.3-2.3v-9.1c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3v9.1c0 1.3-1 2.3-2.3 2.3zm12.8 0c-1.3 0-2.3-1-2.3-2.3V21.9c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3v21.9c0 1.3-1 2.3-2.3 2.3z"
+                                        data-identifyElement="62"></path>
+                                </svg>
+                            </span>
+                            <div class="dropdown-content">
+                                <a href="#">Reports</a>
+                                <a href="#">Analytics</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="navbar-items">
+                        <a href="#">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    class="nav-icon" focusable="false" data-identifyElement="66">
+                                    <path
+                                        d="M23.493 24.692a4.186 4.186 0 01.026-4.238 4.3 4.3 0 013.694-2.098h1.161v-4.361h-.851a4.56 4.56 0 01-3.959-2.295 4.584 4.584 0 01.013-4.569l.427-.737-3.76-2.165-.483.835c-.787 1.36-2.242 2.197-3.817 2.196s-3.028-.839-3.815-2.199l-.486-.839-3.786 2.18.433.748a4.57 4.57 0 01.015 4.555 4.54 4.54 0 01-3.946 2.29h-.734v4.361h1.028c1.521 0 2.929.799 3.707 2.103.78 1.308.79 2.934.027 4.252l-.518.895 3.76 2.165.483-.835c.787-1.36 2.242-2.197 3.817-2.196s3.028.839 3.815 2.199l.486.839 3.786-2.18-.524-.906zm2.37.053c.509.88.207 2.005-.675 2.512l-4.102 2.362a1.847 1.847 0 01-2.519-.673l-.577-.997a2.381 2.381 0 00-4.122-.003l-.574.992a1.846 1.846 0 01-2.519.673l-4.076-2.347a1.836 1.836 0 01-.675-2.512l.609-1.052a2.18 2.18 0 00-.014-2.208 2.288 2.288 0 00-1.965-1.115H3.443a1.842 1.842 0 01-1.844-1.839v-4.725c0-1.016.826-1.839 1.844-1.839h.916c.904 0 1.738-.484 2.184-1.268.45-.79.447-1.759-.009-2.546l-.524-.906a1.837 1.837 0 01.675-2.513l4.102-2.362a1.846 1.846 0 012.519.673l.577.997a2.381 2.381 0 004.122.003l.574-.992a1.846 1.846 0 012.519-.673l4.076 2.347a1.837 1.837 0 01.675 2.513l-.518.895a2.565 2.565 0 00-.008 2.558 2.53 2.53 0 002.198 1.274h1.034c1.018 0 1.844.823 1.844 1.839v4.725a1.842 1.842 0 01-1.844 1.839h-1.344a2.27 2.27 0 00-1.951 1.108 2.169 2.169 0 00-.013 2.196l.616 1.064zm-9.926-2.966c-3.206 0-5.807-2.587-5.807-5.779s2.6-5.779 5.807-5.779c3.206 0 5.807 2.587 5.807 5.779s-2.6 5.779-5.807 5.779zm0-2.021c2.088 0 3.78-1.683 3.78-3.758s-1.692-3.758-3.78-3.758-3.78 1.683-3.78 3.758 1.692 3.758 3.78 3.758z"
+                                        data-identifyElement="67"></path>
+                                </svg>
+                            </span>
+                            <div class="navbar-tooltip">
+                                Admin
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="navbar-footer">
+                    <ul class="nav-list">
+                        <li class="navbar-items">
+                            <a href="#">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        class="nav-icon" focusable="false" data-identifyElement="72">
+                                        <path
+                                            d="M23.168 12.8H11.76a1.12 1.12 0 110-2.24h11.408a1.12 1.12 0 110 2.24zm-4.176 6c0-.622-.5-1.127-1.119-1.136H11.76a1.137 1.137 0 00-.005 2.255l.005.001h6.112a1.136 1.136 0 001.12-1.086v-.002zM32 16V5.2A5.216 5.216 0 0026.801 0H16C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16zM26.8 2.24a2.96 2.96 0 012.96 2.96V16c0 7.599-6.161 13.76-13.76 13.76S2.24 23.599 2.24 16 8.401 2.24 16 2.24z"
+                                            data-identifyElement="73"></path>
+                                    </svg>
+                                </span>
+                                <div class="navbar-tooltip">
+                                    Chat
+                                </div>
+                            </a>
+                        </li>
+                        <li class="navbar-items">
+                            <a href="#">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16"
+                                        class="nav-icon" focusable="false" data-identifyElement="78">
+                                        <path
+                                            d="M6.709 6.167l1.366-1.373a.66.66 0 00.004-.941l-2.062-2.06a.664.664 0 00-.942.002L3.903 2.966c-.545.545-.799 1.652-.542 2.383l.027.124c.016.17.152.591.525 1.268.651 1.182 1.77 2.623 3.471 4.322s3.142 2.816 4.326 3.467c.677.372 1.099.508 1.27.524l.142.034c.694.273 1.807.012 2.369-.549l1.172-1.171a.663.663 0 00.002-.939l-2.062-2.06a.664.664 0 00-.942.002l-1.366 1.373a.962.962 0 01-1.071.18c-.428-.182-1.117-.802-2.503-2.186-1.351-1.35-1.974-2.037-2.169-2.47-.205-.349-.119-.822.159-1.1zm.894.838l.06.076c.306.382.883 1.005 1.795 1.916s1.536 1.487 1.918 1.793c.067.053.121.094.163.124l.07.034 1.31-1.317a1.71 1.71 0 012.422-.004l2.062 2.06c.669.668.669 1.75-.002 2.42l-1.172 1.171c-.833.832-2.339 1.197-3.426.807-.328-.05-.86-.234-1.598-.639-1.276-.701-2.795-1.879-4.562-3.644S3.697 8.519 2.996 7.245c-.41-.744-.595-1.279-.642-1.606-.359-1.106-.007-2.599.809-3.414l1.172-1.171a1.71 1.71 0 012.42-.002l2.062 2.06c.67.669.67 1.748-.002 2.42L7.51 6.844l.093.161z"
+                                            data-identifyElement="79"></path>
+                                    </svg>
+                                </span>
+                                <div class="navbar-tooltip">
+                                    Phone
+                                </div>
+                            </a>
+                        </li>
+                        <li class="navbar-items mb--0 mt--12">
+                            <a href="#">
+                                <span>
+                                    <img src="assets/img/switcher.svg">
+                                </span>
+                                <div class="navbar-tooltip">
+                                    Frameworks Switcher
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="header-container">
+            <div class="header-nav-container">
+                <div class="header-nav-sec-left">
+                    <div class="header-nav-sec-left-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" class="app-icon app-icon--dark cursor-pointer" data-identifyElement="56">
+                            <path
+                                d="M70.4 87.9H30.3c-4 0-7.3 3.3-7.3 7.3s3.3 7.3 7.3 7.3h40.1c4 0 7.3-3.3 7.3-7.3-.1-4-3.3-7.3-7.3-7.3zm27.8-30.8h-68c-4 0-7.3 3.3-7.3 7.3s3.3 7.3 7.3 7.3h68c4 0 7.3-3.3 7.3-7.3s-3.3-7.3-7.3-7.3zM30.3 40.6h68c4 0 7.3-3.3 7.3-7.3s-3.3-7.3-7.3-7.3h-68c-4 0-7.3 3.3-7.3 7.3 0 4.1 3.3 7.3 7.3 7.3z"
+                                data-identifyElement="57"></path>
+                        </svg>
+                    </div>
+                    <div class="header-nav-sec-left-text">
+                        Omnichannel Dashboard
+                    </div>
+                </div>
+                <div class="header-sidebar-container">
+                    <div class="header-sidebar-container-wrap">
+                        <ul>
+                            <li class="my-dashboard">
+                                <a href="#">
+                                    My Dashboard
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128"
+                                        viewBox="0 0 128 128" class="app-icon app-icon--small selectedtick">
+                                        <path
+                                            d="M110.6 27.5c-3.2-2.4-7.8-1.7-10.6 1.2L52.2 78.2c-1.7 1.8-4.6 1.8-6.3 0L28 59.7c-2.8-2.9-7.4-3.6-10.6-1.2-4.1 3.1-4.5 9.1-1 12.6l29.5 30.5c1.8 1.8 4.6 1.8 6.4 0L111.8 40c3.3-3.5 3-9.5-1.2-12.5z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="my-dashboard">
+                                <a href="#" class="my-dashboard-text">
+                                    Knowledge Base Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="mb--110">
+                            <li class="team-dashboard">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" class="app-icon app-icon--verysmall" data-identifyElement="31">
+                                        <path fill-rule="evenodd"
+                                            d="M11.973 8.095h7.095a1 1 0 011 1v1.81a1 1 0 01-1 1h-7.095V19a1 1 0 01-1 1h-1.81a1 1 0 01-1-1v-7.095H1.068a1 1 0 01-1-1v-1.81a1 1 0 011-1h7.095V1a1 1 0 011-1h1.81a1 1 0 011 1v7.095z"
+                                            data-identifyElement="32"></path>
+                                    </svg> New team dashboard
+                                </a>
+                                <span>15 more to go before you use them all</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-nav-sec-right">
+                    <div class="header-nav-sec-right-items">
+                        <button class="get-started-btn">
+                            Get started (18%)
+                            <div class="header-btn-tooltip">
+                                Learn how to get most value out of Freshdesk Omnichanel of your bussiness
+                            </div>
+                        </button>
+                        <div class="new-btn-dropdown">
+                            <div class="dropdown">
+                                <button class="get-started-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        class="app-icon app-icon--verysmall mr-10" data-identifyElement="63">
+                                        <path
+                                            d="M16.945 14.522h4.789a1.21 1.21 0 110 2.422h-4.789v4.789a1.21 1.21 0 11-2.422 0v-4.789H9.734a1.21 1.21 0 110-2.422h4.789V9.733a1.21 1.21 0 112.422 0v4.789zM4.427 1.6H27.04a2.827 2.827 0 012.827 2.827V27.04a2.827 2.827 0 01-2.827 2.827H4.427A2.827 2.827 0 011.6 27.04V4.427A2.827 2.827 0 014.427 1.6zm0 2.423a.404.404 0 00-.404.404V27.04c0 .223.181.404.404.404H27.04a.404.404 0 00.404-.404V4.427a.404.404 0 00-.404-.404H4.427z"
+                                            data-identifyElement="64"></path>
+                                    </svg>
+                                    New
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">New ticket</a>
+                                    <a class="dropdown-item" href="#">New email</a>
+                                    <a class="dropdown-item" href="#">New contact</a>
+                                    <a class="dropdown-item" href="#">New company</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="serach-bar-container">
+                            <div class="search-bar-border"></div>
+                            <div class="search-bar-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="app-icon--link app-icon--topalign app-icon--smallsecondary mr-8" data-identifyElement="71">
+                                    <path fill="#183247"
+                                        d="M11.015 11.95c-2.641 2.17-6.557 2.013-9.033-.464-2.635-2.635-2.644-6.898-.019-9.523s6.888-2.616 9.523.019c2.477 2.476 2.633 6.392.464 9.033l3.855 3.855c.26.26.26.679.002.937a.662.662 0 01-.937-.002l-3.855-3.855zM2.902 2.902C.793 5.01.8 8.435 2.917 10.552c2.116 2.116 5.541 2.123 7.65.015 2.108-2.109 2.101-5.534-.015-7.65C8.435.8 5.01.793 2.902 2.902z"
+                                        data-identifyElement="72"></path>
+                                </svg> search
+                            </div>
+                        </div>
+                        <div class="bell-icon-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19" data-test-icon="notification" class="app-icon--link app-icon--topalign app-icon--large" data-identifyElement="78">
+                                <path fill="#183247"
+                                    d="M4.559 15.903H.727A.74.74 0 010 15.15a.74.74 0 01.727-.754h.647v-6.36c0-3.393 2.376-6.21 5.499-6.765a1.23 1.23 0 01-.004-.1C6.869.526 7.375 0 8 0s1.131.525 1.131 1.172c0 .033-.001.066-.004.099 3.123.554 5.5 3.372 5.5 6.764v6.361h.646a.74.74 0 01.727.754.74.74 0 01-.727.753H11.44C11.205 17.653 9.755 19 8 19s-3.205-1.347-3.441-3.097zm1.48 0c.217.913 1.012 1.59 1.961 1.59.949 0 1.744-.677 1.962-1.59H6.038zm7.133-1.507v-6.36c0-2.96-2.316-5.358-5.172-5.358S2.828 5.077 2.828 8.035v6.361h10.344z"
+                                    data-identifyElement="79"></path>
+                            </svg>
+                        </div>
+                        <div class="box-icon-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2" class="app-icon--link app-icon--topalign app-icon--large" data-identifyElement="82">
+                                <path fill="#475867"
+                                    d="M1.64.14a.3.3 0 010 .26h.06a.3.3 0 01.3.28.32.32 0 01-.16.32v.72a.32.32 0 01-.08.2.28.28 0 01-.2.08H.44a.28.28 0 01-.2-.08.32.32 0 01-.08-.2V1A.33.33 0 010 .75V.7A.3.3 0 01.28.4h.11a.27.27 0 010-.26A.27.27 0 01.75 0 1 1 0 011 .4a1.11 1.11 0 01.27-.4.28.28 0 01.37.11zM.72 1h-.4v.69a.12.12 0 00.11.12h.29V1zm.56 0v.81h.28a.12.12 0 00.12-.12V1zM1.12.56H.88v1.28h.24V.56zm.16 0v.31h.42a.14.14 0 00.14-.12V.7a.13.13 0 00-.12-.14h-.44zm-.56 0H.3a.14.14 0 00-.14.12.14.14 0 00.12.19h.44V.56zm.64-.39a.39.39 0 00-.09.11l-.06.09h.13a.22.22 0 00.12 0 .11.11 0 000-.15.1.1 0 00-.14 0zm-.69 0a.1.1 0 00-.14 0 .11.11 0 000 .15.2.2 0 00.11 0h.18L.76.28A.39.39 0 00.67.17z"
+                                    data-identifyElement="83"></path>
+                            </svg>
+                        </div>
+                        <div class="calendar-icon-btn">
+                            <img src="assets/img/calendar.svg">
+                        </div>
+                        <div class="header-user-profile-dropdown">
+                            <div class="dropdown">
+                                <button class="profile-drop-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    W
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <ul>
+                                        <li class="user-details">
+                                            <h6>Waleed Hassan</h6>
+                                            <p>wh03027687675@gmail.com</p>
+                                        </li>
+                                        <li>
+                                            <h6>Keyboard shortcuts</h6>
+                                            <p>press <strong>?</strong> to view <a href="#">shortcuts</a></p>
+                                        </li>
+                                    </ul>
+                                    <a class="dropdown-item" href="#">Profile settings</a>
+                                    <a class="dropdown-item" href="#">go to customer portal</a>
+                                    <a class="dropdown-item" href="#">Sign out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-header-container">
+                <div class="sub-header-actions">
+                    <div class="sub-header-left">
+                        <div class="date-indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" class="app-icon app-icon--regular app-icon--muted-grey mr-6">
+                                <path
+                                    d="M35 11.543H24.5V7H35v4.543zm10.5 0V7h3.2a5.3 5.3 0 015.3 5.3v38.4a5.3 5.3 0 01-5.3 5.3H10.3A5.3 5.3 0 015 50.7V12.3A5.3 5.3 0 0110.3 7H14v4.543h-3.7a.757.757 0 00-.757.757V23h39.914V12.3a.757.757 0 00-.757-.757h-3.2zM35.002 27.5h-11.5V37h11.5v-9.5zm4.5 0V37h9.955v-9.5h-9.955zm-4.5 23.957V41.5h-11.5v9.957h11.5zm4.5 0H48.7a.757.757 0 00.757-.757v-9.2h-9.955v9.957zM19.002 27.5H9.543V37h9.459v-9.5zm0 23.957V41.5H9.543v9.2c0 .418.339.757.757.757h8.702zM17 4.816a2.25 2.25 0 114.5 0v7.5a2.25 2.25 0 11-4.5 0v-7.5zm21 0a2.25 2.25 0 114.5 0v7.5a2.25 2.25 0 11-4.5 0v-7.5z">
+                                </path>
+                            </svg> Today
+                        </div>
+                        <div class="dashboard-filters">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="app-icon app-icon--regular app-icon--muted-grey filter-icon">
+                                <path
+                                    d="M15.12 15.231v11.436l3.069-1.733v-9.653l8.299-10.142a.532.532 0 00-.413-.871H6.525a.533.533 0 00-.398.888l8.994 10.076zm-2.432.928L3.519 5.887C2.12 4.32 3.233 1.836 5.333 1.836H27.2c2.052 0 3.181 2.384 1.882 3.972L20.62 16.15v8.785c0 .877-.472 1.686-1.236 2.118l-3.069 1.733c-1.621.916-3.628-.256-3.628-2.118V16.16z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ticker-group-drop-btn">
+                            <div class="dropdown">
+                                <button class="ticket-group-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Ticket groups:<span>All groups</span>
+                                    <i class="far fa-chevron-down"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <ul>
+                                        <li class="search-input">
+                                            <input type="text" placeholder="Search group">
+                                            <i class="far fa-search"></i>
+                                        </li>
+                                        <li class="search-text">
+                                            You can select upto 4 options at a time
+                                        </li>
+                                    </ul>
+                                    <ul class="checkbox-input-container">
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Accout managers</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Billing</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Escalations</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Product Management</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">QA</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Replacement</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Sales</label>
+                                        </li>
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Shipping and delivery</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ticker-group-drop-btn">
+                            <div class="dropdown">
+                                <button class="ticket-group-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Phone queues:<span>All queues</span>
+                                    <i class="far fa-chevron-down"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <ul>
+                                        <li class="search-input">
+                                            <input type="text" placeholder="Search group">
+                                            <i class="far fa-search"></i>
+                                        </li>
+                                        <li class="search-text">
+                                            You can select upto 4 options at a time
+                                        </li>
+                                    </ul>
+                                    <ul class="checkbox-input-container">
+                                        <li class="checkbox-input">
+                                            <input type="checkbox">
+                                            <label for="">Global Queues</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="recent-activity-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                            class="nucleus-icon nucleus-icon--small nucleus-icon--primary" aria-hidden="true" role="img"
+                            data-identifyElement="175">
+                            <path
+                                d="M6.298 6.343l-2.919-.017c-.67-.004-1.216-.55-1.22-1.22s.536-1.21 1.206-1.206l6.004.035a1.23 1.23 0 011.22 1.22l.036 6.004c.004.67-.536 1.21-1.206 1.206s-1.216-.55-1.22-1.22L8.18 7.893a11.362 11.362 0 00-3.401 8.108c0 6.326 5.19 11.455 11.591 11.455 4.538 0 8.599-2.6 10.496-6.588.287-.603 1.013-.862 1.623-.578s.872 1.002.585 1.604c-2.296 4.826-7.212 7.974-12.705 7.974-7.749 0-14.032-6.208-14.032-13.867 0-3.679 1.462-7.114 3.961-9.657zm24.044 10.921c-.061.663-.654 1.152-1.325 1.092s-1.166-.646-1.105-1.31a11.38 11.38 0 00-.315-3.902c-.167-.645.226-1.302.879-1.468s1.318.223 1.485.868a13.72 13.72 0 01.381 4.718zm-2.263-8.906c.372.555.218 1.304-.344 1.671s-1.319.215-1.691-.34a11.564 11.564 0 00-2.367-2.581c-.523-.42-.602-1.18-.177-1.696s1.194-.595 1.716-.175a14.009 14.009 0 012.862 3.121zm-6.73-5.326c.63.236.947.933.708 1.555s-.944.936-1.574.699a11.673 11.673 0 00-4.114-.742c-.674 0-1.22-.54-1.22-1.206s.546-1.206 1.22-1.206c1.722 0 3.403.307 4.98.899zm-3.761 5.934v6.833h5.897c.674 0 1.22.54 1.22 1.206s-.546 1.206-1.22 1.206h-7.117c-.674 0-1.22-.54-1.22-1.206V8.966c0-.666.546-1.206 1.22-1.206s1.22.54 1.22 1.206z"
+                                data-identifyElement="176"></path>
+                        </svg>
+                        Recent activities
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="main-content-container">
+            <div class="ticket-detail-content-container">
+                <div class="status-tag-wrap">
+                    <div class="over-due-tag">
+                        Overdue
+                    </div>
+                </div>
+                <div class="ticket-content-container-wrap">
+                    <div class="ticket-detail-header">
+                        <div class="ticket-header-container m-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="app-icon app-icon--large" data-identifyElement="246">
+                                <path
+                                    d="M2.56 5.333h26.347c1.119 0 2.027.912 2.027 2.036v18.327a2.03 2.03 0 01-2.027 2.036H2.56a2.032 2.032 0 01-2.027-2.036V7.369A2.03 2.03 0 012.56 5.333zm.405 2.444V25.29h25.536V7.777H2.965zm4.323 3.667l8.445 5.657 8.445-5.657c.559-.374 1.314-.223 1.686.339s.222 1.32-.337 1.694l-9.12 6.109a1.21 1.21 0 01-1.349 0l-9.12-6.109c-.559-.374-.71-1.133-.337-1.694s1.128-.713 1.686-.339z"
+                                    data-identifyElement="247"></path>
+                            </svg>
+                            <span>How can I get a refund for my order?</span>
+                        </div>
+                        <div class="ticket-create-info-text">
+                            Created by
+                            <span>Waleed Hassan</span>
+                        </div>
+                    </div>
+                    <div class="ticket-details-wrapper">
+                        <div class="ticket-detail-item-header">
+                            <button class="profile-drop-btn" type="button">
+                                M
+                            </button>
+                            <div class="mail-detail-text">
+                                <div class="send-info">
+                                    <a href="#">
+                                        Matt Rogers
+                                    </a>
+                                    <span>reported via email</span>
+                                </div>
+                                <div class="created-time">12 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-info-continer">
+                        <div class="ticket-info-continer-wrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="app-icon app-icon-convo app-icon--small app-icon--topalign" data-test-id="app-icon--email">
+                                <path
+                                    d="M2.56 5.333h26.347c1.119 0 2.027.912 2.027 2.036v18.327a2.03 2.03 0 01-2.027 2.036H2.56a2.032 2.032 0 01-2.027-2.036V7.369A2.03 2.03 0 012.56 5.333zm.405 2.444V25.29h25.536V7.777H2.965zm4.323 3.667l8.445 5.657 8.445-5.657c.559-.374 1.314-.223 1.686.339s.222 1.32-.337 1.694l-9.12 6.109a1.21 1.21 0 01-1.349 0l-9.12-6.109c-.559-.374-.71-1.133-.337-1.694s1.128-.713 1.686-.339z">
+                                </path>
+                            </svg>
+                            <p>Hi there,</p>
+                            <br>
+                            <p>I need a refund for the headphones that I purchased last week. My order ID is #53467. The product was damaged when I received it. Can you please tell me how I can get a refund?
+                            </p>
+                            <br>
+                            <p>
+                                Best,<br> Matt.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ticket-detail-reply-sec">
+                        <div class="ticket-detail-item-header">
+                            <button class="profile-drop-btn" type="button">
+                                W
+                            </button>
+                            <div class="mail-detail-text">
+                                <div class="send-info">
+                                    <a href="#">
+                                        Waleed Hassan
+                                    </a>
+                                    <span>replied</span>
+                                </div>
+                                <div class="created-time">12 days ago</div>
+                            </div>
+                        </div>
+                        <div class="ticket-info-continer bgd-c">
+                            <div class="ticket-info-continer-wrap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="app-icon app-icon-convo app-icon--small app-icon--topalign" data-test-id="app-icon--email">
+                                    <path
+                                        d="M2.56 5.333h26.347c1.119 0 2.027.912 2.027 2.036v18.327a2.03 2.03 0 01-2.027 2.036H2.56a2.032 2.032 0 01-2.027-2.036V7.369A2.03 2.03 0 012.56 5.333zm.405 2.444V25.29h25.536V7.777H2.965zm4.323 3.667l8.445 5.657 8.445-5.657c.559-.374 1.314-.223 1.686.339s.222 1.32-.337 1.694l-9.12 6.109a1.21 1.21 0 01-1.349 0l-9.12-6.109c-.559-.374-.71-1.133-.337-1.694s1.128-.713 1.686-.339z">
+                                    </path>
+                                </svg>
+                                <p>
+                                    <span class="dark-small-text">To:</span>
+                                    <span class="display-mail">matt.rogers@freshdesk.com</span>
+                                </p>
+                                <br>
+                                <p>Hi Matt Rogers,</p>
+                                <br>
+                                <p>hi</p>
+                                <br>
+                                <br>
+                                <div class="ticket-qouted-sec">
+                                    <button class="show-qouted-btn"></button>
+                                    <div class="ticket-qouted-sec-content">
+                                        <p>On Wed, 3 Nov at 8:51 AM , Matt Rogers &#60;matt.rogers@freshdesk.com&#62; wrote: Hi there,</p>
+                                        <br>
+                                        <p>I need a refund for the headphones that I purchased last week. My order ID is #53467. The product was damaged when I received it. Can you please tell me how I can get a refund?</p>
+                                        <br>
+                                        <p>
+                                            Best,<br> Matt.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- New -->
+                    <div class="border border-rounded p-2">
+                        <div class="replay-textarea">
+                            <p class="p-0 m-0">form: </p>
+                            <hr class="p-0 m-0">
+                            <p class="d-flex justify-content-between">
+                                <span>To: gettingreport@gmail.com</span><span><button
+                                        class="border-0 p-0 m-1 btn btn-light">bc
+                                    </button>
+                                    <button class="border-0 p-0 m-1 btn btn-light">cc</button>
+                                </span>
+                            </p>
+                        </div>
+                        <textarea>
+
+                        </textarea>
+                        <div class="d-flex justify-content-end">
+                            <button class="border-0 p-0 m-2 bg-light"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                    <path fill-rule="evenodd"
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                </svg></button>
+                            <div class="dropdown show m-0 p-2 border-0 btn btn-sm">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Send
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Send</a>
+                                    <a class="dropdown-item" href="#">...</a>
+                                    <a class="dropdown-item" href="#">...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ticket-detail-reply-bar">
+
+
+
+                        <!-- <div class="mr-16">
+                            <div class="replay-info">
+
+                            </div>
+                            <form>
+                                <textarea name="editor1" id="editor1" rows="10" cols="80">
+                                    This is my textarea to be replaced with CKEditor 4.
+                                </textarea>
+                                <script>
+                                    // Replace the <textarea id="editor1"> with a CKEditor 4
+                                    // instance, using default configuration.
+                                    CKEDITOR.replace('editor1');
+                                </script>
+                            </form>
+                        </div> -->
+
+                        <ul>
+                            <li class="mr-16">
+                                <button class="profile-drop-btn" type="button">
+                                    W
+                                </button>
+                            </li>
+                            <li>
+                                <button class="reply-bar-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        class="nucleus-icon nucleus-icon--small nucleus-icon--primary"
+                                        aria-hidden="true" role="img">
+                                        <path
+                                            d="M6.313 12.929l9.442-9.246c.478-.468.488-1.236.022-1.716s-1.231-.49-1.709-.022L2.499 13.273c-.226.22-.366.529-.366.87s.14.649.366.87l11.569 11.328c.478.468 1.243.458 1.709-.022s.456-1.248-.022-1.716l-9.442-9.246h15.769c2.67 0 4.834 2.174 4.834 4.855v9.508c0 .67.541 1.214 1.209 1.214s1.209-.543 1.209-1.214v-9.508c0-4.022-3.247-7.283-7.252-7.283H6.313z">
+                                        </path>
+                                    </svg>
+                                    Reply
+                                </button>
+                            </li>
+                            <li>
+                                <button class="reply-bar-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        class="nucleus-icon nucleus-icon--small nucleus-icon--primary"
+                                        aria-hidden="true" role="img">
+                                        <path
+                                            d="M7.822 1.6h16.356c2.258 0 4.089 1.808 4.089 4.038v20.19c0 2.23-1.831 4.038-4.089 4.038H7.822c-2.258 0-4.089-1.808-4.089-4.038V5.638c0-2.23 1.831-4.038 4.089-4.038zm0 2.423c-.903 0-1.636.723-1.636 1.615v20.19c0 .892.732 1.615 1.636 1.615h16.356c.903 0 1.636-.723 1.636-1.615V5.638c0-.892-.732-1.615-1.636-1.615H7.822zm2.234 3.634h11.888a1.21 1.21 0 110 2.422H10.056a1.21 1.21 0 110-2.422zm0 6.865h11.888a1.21 1.21 0 110 2.422H10.056a1.21 1.21 0 110-2.422zm0 6.865h11.888a1.21 1.21 0 110 2.422H10.056a1.21 1.21 0 110-2.422z">
+                                        </path>
+                                    </svg>
+                                    Add note
+                                </button>
+                            </li>
+                            <li>
+                                <button class="reply-bar-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        class="nucleus-icon nucleus-icon--small nucleus-icon--primary"
+                                        aria-hidden="true" role="img">
+                                        <path
+                                            d="M25.154 12.929H9.385c-4.005 0-7.252 3.261-7.252 7.283v9.508c0 .67.541 1.214 1.209 1.214s1.209-.543 1.209-1.214v-9.508c0-2.681 2.164-4.855 4.834-4.855h15.769l-9.442 9.246c-.478.468-.488 1.236-.022 1.716s1.231.49 1.709.022l11.57-11.329a1.218 1.218 0 000-1.738L17.399 1.945c-.478-.468-1.243-.458-1.709.022s-.456 1.248.022 1.716l9.442 9.246z">
+                                        </path>
+                                    </svg>
+                                    Forward
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="ticket-properties-sidebar">
+                        <div class="ticket-properties-sidebar-wrap">
+                            <div class="ticket-properties-body">
+                                <div class="status-card-container">
+                                    <p>Open</p>
+                                    <div class="status-card-text">
+                                        <p>
+                                            <span>Resolution Due</span>
+                                            <a href="#">Edit</a>
+                                        </p>
+                                        by Fri, 05 Nov 2021, 10:00 PM
+                                    </div>
+                                </div>
+                                <form class="ticket-properties-form">
+                                    <div class="ticket-properties-form-title">
+                                        Properties
+                                    </div>
+                                    <div class="ticket-properties-input-container">
+                                        <div class="ticket-properties-input-label">
+                                            Tags
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                    <div class="ticket-properties-input-container">
+                                        <div class="ticket-properties-input-label">
+                                            Type
+                                        </div>
+                                        <div class="ticker-user-drop-btn">
+                                            <div class="dropdown">
+                                                <button class="ticket-user-btn ticket-properties-input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Refunds and Returns
+                                                    <i class="far fa-chevron-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                                    <ul class="checkbox-input-container">
+                                                        <li class="checkbox-input">
+                                                            Pending
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Resolved
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Closed
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Waiting on Customer
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Waiting on Third Party
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-properties-input-container">
+                                        <div class="ticket-properties-input-label">
+                                            Status
+                                            <i class="fas fa-asterisk"></i>
+                                        </div>
+                                        <div class="ticker-user-drop-btn">
+                                            <div class="dropdown">
+                                                <button class="ticket-user-btn ticket-properties-input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Open
+                                                    <i class="far fa-chevron-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                                    <ul class="checkbox-input-container">
+                                                        <li class="checkbox-input">
+                                                            Pending
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Resolved
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Closed
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Waiting on Customer
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Waiting on Third Party
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-properties-input-container">
+                                        <div class="ticket-properties-input-label">
+                                            Priority
+                                        </div>
+                                        <div class="ticker-user-drop-btn">
+                                            <div class="dropdown">
+                                                <button class="ticket-user-btn ticket-properties-input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <div class="ticket-properties-input-text">
+                                                        <div class="drop-dot green"></div>
+                                                        Low
+                                                    </div>
+                                                    <i class="far fa-chevron-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                                    <ul class="checkbox-input-container">
+                                                        <li class="checkbox-input active-drop">
+                                                            <div class="drop-dot green"></div>
+                                                            Low
+                                                            <img src="assets/img/check.svg">
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            <div class="drop-dot blue"></div>
+                                                            Medium
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            <div class="drop-dot yellow"></div>
+                                                            High
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            <div class="drop-dot red"></div>
+                                                            Red
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-properties-input-container">
+                                        <div class="ticket-properties-input-label">
+                                            Group
+                                        </div>
+                                        <div class="ticker-user-drop-btn">
+                                            <div class="dropdown">
+                                                <button class="ticket-user-btn ticket-properties-input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Escalations
+                                                    <i class="far fa-chevron-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                                    <ul class="checkbox-input-container">
+                                                        <li class="checkbox-input">
+                                                            Pending
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Resolved
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Closed
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Waiting on Customer
+                                                        </li>
+                                                        <li class="checkbox-input">
+                                                            Waiting on Third Party
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-properties-input-container">
+                                        <div class="ticket-properties-input-label">
+                                            Agent
+                                        </div>
+                                        <div class="ticker-user-drop-btn">
+                                            <div class="dropdown">
+                                                <button class="ticket-user-btn ticket-properties-input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    --
+                                                    <i class="far fa-chevron-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                                    <ul class="checkbox-input-container">
+                                                        <li class="checkbox-input">
+                                                            --
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="ticket-properties-footer pos-s">
+                                    <button class="w-100">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ticket-detail-sidebar">
+                <div class="ticket-detail-sidebar-card">
+                    <div class="ticket-detail-sidebar-card-head">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" class="accordion-image">
+                            <path
+                                d="M72.7 16.5c-8.5 0-13.6 6.6-13.6 12.5 0 5.8 4.3 9.2 10.2 9.2 5.9 0 13.8-4.5 13.8-12.2 0-7.7-7.4-9.5-10.4-9.5m8.9 78.6c.8 1.1.7 2.7-.4 3.6-8.7 7.3-18.9 12.6-24.8 14-6.4 1.5-11.4 1-11.9-5.9s8-36.3 8.6-39.5c.5-2.6-5.7.1-10.7 2.6-1.5.7-3.3.1-4-1.3-.6-1.2-.2-2.6.9-3.4 8.8-6.2 19.7-12 28.9-14.4 5.3-1.3 8.4.3 8.6 6.4.2 6.1-8.6 34.1-9.3 37.9-1 5.5 5.7 2.1 10.5-.8 1.1-.6 2.7-.3 3.6.8">
+                            </path>
+                        </svg> Contact details
+                        <span class="text-border">|</span>
+                        <span class="edit-text">Edit</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="accordion-arrow">
+                            <path
+                                d="M8.626 9.744c-.875-.903-2.294-.903-3.17-.001s-.876 2.366-.001 3.268l8.959 9.244a2.195 2.195 0 003.171 0l8.959-9.244c.875-.903.874-2.366-.001-3.268s-2.295-.902-3.169.001L16 17.353 8.626 9.744z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="ticket-detail-sidebar-card-body">
+                        <div class="ticket-detail-sidebar-card-body-title">
+                            <div class="user-ticker-avatar ml-0">M</div>
+                            <a href="#">jhon</a>
+                        </div>
+                        <div class="user-email-detail">
+                            <h6>Email</h6>
+                            <h2>john@freshdesk.com</h2>
+                        </div>
+                        <div class="view-more">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" aria-label="Open in new tab">
+                                    <path
+                                        d="M64.545 11.014l-14.18.012c-1.682.001-3.044-1.361-3.042-3.042s1.366-3.046 3.048-3.048l21.531-.019a3.038 3.038 0 013.042 3.042l-.019 21.531c-.001 1.682-1.366 3.046-3.048 3.048s-3.044-1.361-3.042-3.042l.013-14.18-36.093 36.093a3.042 3.042 0 11-4.302-4.302l36.093-36.093zM69 47.975a3 3 0 116 0V64.32C75 70.218 70.218 75 64.32 75H15.68C9.782 75 5 70.218 5 64.32V15.68C5 9.782 9.782 5 15.68 5h16.345a3 3 0 110 6H15.68A4.68 4.68 0 0011 15.68v48.64A4.68 4.68 0 0015.68 69h48.64A4.68 4.68 0 0069 64.32V47.975z">
+                                    </path>
+                                </svg> View more info
+                            </a>
+                        </div>
+                        <div class="ticket-detail-sidebar-feed-wrap">
+                            <div class="ticket-detail-sidebar-feed-text">Timeline</div>
+                            <section class="timeline-sec">
+                                <div class="timeline-sec-content">
+                                    <div class="timeline-sec-content-img">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" data-test-id="timeline-icon-email">
+                                            <path
+                                                d="M2.56 5.333h26.347c1.119 0 2.027.912 2.027 2.036v18.327a2.03 2.03 0 01-2.027 2.036H2.56a2.032 2.032 0 01-2.027-2.036V7.369A2.03 2.03 0 012.56 5.333zm.405 2.444V25.29h25.536V7.777H2.965zm4.323 3.667l8.445 5.657 8.445-5.657c.559-.374 1.314-.223 1.686.339s.222 1.32-.337 1.694l-9.12 6.109a1.21 1.21 0 01-1.349 0l-9.12-6.109c-.559-.374-.71-1.133-.337-1.694s1.128-.713 1.686-.339z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-sec-content-wrap">
+                                        <a href="#">How do I place a custom order?</a>
+                                        <span class="ticket-id">#6</span>
+                                        <span class="time-status-text">3 Nov 2021, 09:51 AM</span>
+                                        <span class="time-status-text">Status: Open</span>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-sidebar-right">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" class="app-icon app-icon--normal">
+                            <path
+                                d="M72.7 16.5c-8.5 0-13.6 6.6-13.6 12.5 0 5.8 4.3 9.2 10.2 9.2 5.9 0 13.8-4.5 13.8-12.2 0-7.7-7.4-9.5-10.4-9.5m8.9 78.6c.8 1.1.7 2.7-.4 3.6-8.7 7.3-18.9 12.6-24.8 14-6.4 1.5-11.4 1-11.9-5.9s8-36.3 8.6-39.5c.5-2.6-5.7.1-10.7 2.6-1.5.7-3.3.1-4-1.3-.6-1.2-.2-2.6.9-3.4 8.8-6.2 19.7-12 28.9-14.4 5.3-1.3 8.4.3 8.6 6.4.2 6.1-8.6 34.1-9.3 37.9-1 5.5 5.7 2.1 10.5-.8 1.1-.6 2.7-.3 3.6.8">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" class="app-icon app-icon--normal">
+                            <g fill="none" fill-rule="evenodd">
+                                <path fill="#DADFE3"
+                                    d="M28.476 20.815A9.375 9.375 0 0119.1 30.19a9.375 9.375 0 01-9.375-9.375A9.375 9.375 0 0119.1 11.44a9.375 9.375 0 019.375 9.375">
+                                </path>
+                                <path fill="#EDF2F1" d="M17.164 5.853V2.751h2.069v3.102"></path>
+                                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M17.164 5.853V2.751h2.069v3.102"></path>
+                                <path fill="#EDF2F1" d="M16.13 2.75h4.137"></path>
+                                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M16.13 2.75h4.137"></path>
+                                <path fill="#EDF2F1" d="M26.025 8.371l2.07-2.069"></path>
+                                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M26.025 8.371l2.07-2.069"></path>
+                                <path stroke="#6F7C87" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M31.646 19.302c0 7.427-6.02 13.448-13.448 13.448-7.428 0-13.449-6.021-13.449-13.448 0-7.427 6.022-13.448 13.45-13.448 7.426 0 13.447 6.02 13.447 13.448z">
+                                </path>
+                                <path stroke="#6F7C87" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M27.513 19.302a9.315 9.315 0 01-9.315 9.315 9.314 9.314 0 01-9.315-9.315 9.314 9.314 0 019.315-9.315 9.315 9.315 0 019.315 9.315z">
+                                </path>
+                                <path fill="#EDF2F1" d="M29.54 5.502a.845.845 0 10-1.69 0 .845.845 0 001.69 0"></path>
+                                <path fill="#000"
+                                    d="M28.694 3.157a2.348 2.348 0 00-2.345 2.345 2.348 2.348 0 002.345 2.345 2.348 2.348 0 002.345-2.345 2.348 2.348 0 00-2.345-2.345m0 1.5a.845.845 0 11.001 1.69.845.845 0 010-1.69">
+                                </path>
+                                <path fill="#DADFE3"
+                                    d="M17.006 20.68l.898-8.546c.037-.357.557-.357.594 0l.891 8.482c.063.596-.286 1.19-.863 1.347a1.202 1.202 0 01-1.52-1.283">
+                                </path>
+                                <path fill="#000"
+                                    d="M18.201 11.866a.29.29 0 00-.297.268l-.898 8.546a1.202 1.202 0 001.519 1.283c.578-.157.927-.752.864-1.347l-.89-8.482a.29.29 0 00-.298-.268">
+                                </path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('.show-qouted-btn').click(function(event) {
+                $('.ticket-qouted-sec-content').toggleClass('show');
+            });
+        });
+    </script>
+</body>
+
+</html>
